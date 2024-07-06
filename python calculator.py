@@ -12,9 +12,17 @@ class Calculator:
         master.config(bg="gray")
         master.resizable(False,False) 
 
-def show(self,value):
+    def show(self,value):
         self.entry_value+=str(value)
         self.equation.set(self.entry_value)
+
+    def clear(self):
+        self.entry_value=''
+        self.equation.set(self.entry_value)
+
+    def solve(self):
+        result=eval(self.entry_value)
+        self.equation.set(result)        
 
 root=Tk()
 Calculator=Calculator(root)
